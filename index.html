@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tongues of the World — a 6-minute motion film</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,800;0,9..144,900;1,9..144,600;1,9..144,900&family=Space+Grotesk:wght@400;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/film.css">
+</head>
+<body>
+<div id="viewport">
+  <div id="stage">
+    <div id="sky"></div>
+    <svg id="map" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+      <g id="cam"><path id="sphere"/><path id="graticule"/><g id="countries"></g></g>
+    </svg>
+    <div id="dim"></div>
+    <svg id="fxs" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+      <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+      <g id="fx"></g>
+    </svg>
+    <div id="layer"></div>
+    <div id="chapter"><span id="chapNum"></span><span id="chapTitle"></span></div>
+    <div id="caption"></div>
+    <div id="grain"></div>
+    <div id="vignette"></div>
+    <div id="letterbox"></div>
+  </div>
+</div>
+<div id="controls">
+  <button id="play" aria-label="Play / pause" title="Play / pause (Space)">▶</button>
+  <div id="bar" title="Seek"><div id="fill"></div><div id="marks"></div></div>
+  <span id="time">0:00 / 6:00</span>
+  <button id="cc" class="tog on" title="Subtitles (C)">CC</button>
+  <button id="snd" class="tog on" title="Music &amp; SFX (M)">♪</button>
+  <button id="fs" title="Fullscreen (F)">⛶</button>
+</div>
+<div id="start"><div>
+  <p class="kicker">A motion film · 6:00</p>
+  <h1>Tongues of <em>the World</em></h1>
+  <p>How languages travelled the planet — and who walked off with whose words.</p>
+  <button id="go" disabled>Loading map…</button>
+  <small>Space — play/pause · ←/→ — seek 5 s · F — fullscreen · C — subtitles · M — sound</small>
+</div></div>
+<script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js"></script>
+<script src="js/script-data.js"></script>
+<script src="js/audio.js"></script>
+<script src="js/film.js"></script>
+</body>
+</html>
